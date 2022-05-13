@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
 
     def index
-        @places = Places.all
+        @places = Place.all
     end
 
     def show
@@ -20,8 +20,9 @@ class PlacesController < ApplicationController
         redirect_to "/places"
     end
     
-      def destroy
+    def destroy
         @place = Place.find_by({ "id" => params["id"] })
         @place.destroy
         redirect_to "/places"
-      end
+    end
+end
